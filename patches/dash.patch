@@ -1,0 +1,12 @@
+diff -ru dash-0.5.10.2-bak/src/mkbuiltins dash-0.5.10.2/src/mkbuiltins
+--- dash-0.5.10.2-bak/src/mkbuiltins	2019-06-02 16:17:17.345661139 +0100
++++ dash-0.5.10.2/src/mkbuiltins	2019-06-02 16:17:29.808703736 +0100
+@@ -101,7 +101,7 @@
+  */
+ 
+ !
+-sed 's/	-[a-z]*//' $temp2 | nl -ba -v0 |
++sed 's/	-[a-z]*//' $temp2 | nl -ba |
+ 	LC_ALL= LC_COLLATE=C sort -u -k 3,3 |
+ 	tr abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ |
+ 	awk '{	printf "#define %s (builtincmd + %d)\n", $3, $1}'
