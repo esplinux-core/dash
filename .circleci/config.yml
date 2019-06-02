@@ -16,9 +16,6 @@ jobs:
           name: Build
           shell: /bin/sh -e
           command: |
-            pwd
-            ls -al
-            find /
             esp add ghr espbuild
             echo gnu >> /etc/esp-repos
             espbuild dash.conf
